@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org/">
+
+<!-- HEAD FRAGMENT -->
+<head th:fragment="dochead">
+	
+		<title>Testing A Map</title>
+		
+		<style>
+		
+			#map {
+        			height: 400px;
+        			width: 100%;
+       		}
+       		
+		</style>
+		
+		<script th:src="@{/js/map.js}"></script>
+	    <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCt_Goq2iMbIxWsjPVCDw9ExKDbdCi82Gw&amp;callback=mapInit"></script>
+		
+	</head>
+
+<!-- TEMPORARY HEADER FRAGMENT -->
+<header th:fragment="header">Smart Neighborhood</header>
+
+</html>
