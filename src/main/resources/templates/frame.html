@@ -4,24 +4,36 @@
 
 <!-- HEAD FRAGMENT -->
 <head th:fragment="dochead">
-	
-		<title>Testing A Map</title>
-		
-		<style>
-		
-			#map {
-        			height: 400px;
-        			width: 100%;
-       		}
-       		
-		</style>
-		
-		<script th:src="@{/js/map.js}"></script>
-	    <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCt_Goq2iMbIxWsjPVCDw9ExKDbdCi82Gw&amp;callback=mapInit"></script>
-		
-	</head>
 
-<!-- TEMPORARY HEADER FRAGMENT -->
-<header th:fragment="header">Smart Neighborhood</header>
+	<title>Community Unleashed</title>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
+		
+	<script th:src="@{/js/map.js}"></script>
+	<script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCt_Goq2iMbIxWsjPVCDw9ExKDbdCi82Gw&amp;callback=mapInit"></script>
+
+</head>
+
+<!-- NAVBAR FRAGMENT -->
+<nav th:fragment="navbar" class="navbar navbar-default unleashed-nav-custom">
+	<div class="container-fluid">
+	
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">Community Unleashed</a>
+		</div>
+		
+		<ul class="nav navbar-nav">
+			<li><a href="#">Section 1</a></li>
+			<li><a href="#">Section 2</a></li>
+			<li><a href="#">Section 3</a></li>
+		</ul>
+		
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="#">Something to the right</a></li>
+		</ul>
+		
+	</div> 
+</nav>
 
 </html>

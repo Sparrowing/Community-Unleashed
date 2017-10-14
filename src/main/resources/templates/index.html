@@ -6,11 +6,28 @@
 	
 	<body>
 	
-		<header th:replace="frame::header"></header>
+		<div class="container-fluid unleashed-container-custom">
 		
-		<p>Index page!</p>
-		
-		<div id="map"></div>
+			<nav th:replace="frame::navbar"></nav>
+	
+			<div class="row col-sm-12 row-custom" id="banner-row">
+            
+				<h1>First Banner</h1>
+				<h3>Whatever we wanted in the first group</h3>
+            
+			</div>
+            
+			<div class="row row-custom" id="map-row">
+                
+				<div class="col-sm-8" id="map"></div>
+                
+				<div class="col-sm-4">
+					<small>Legend etc etc</small>
+				</div>
+            
+			</div>
+			
+		</div>
 	
 	</body>
 
