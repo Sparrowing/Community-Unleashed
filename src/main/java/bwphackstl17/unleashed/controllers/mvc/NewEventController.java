@@ -1,4 +1,4 @@
-package bwphackstl17.smartneighborhood.controllers.mvc;
+package bwphackstl17.unleashed.controllers.mvc;
 
 import java.util.Date;
 
@@ -9,8 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import bwphackstl17.smartneighborhood.base.BaseController;
-import bwphackstl17.smartneighborhood.entities.Event;
+import bwphackstl17.unleashed.base.BaseController;
+import bwphackstl17.unleashed.entities.Event;
 
 @Controller
 public class NewEventController extends BaseController {

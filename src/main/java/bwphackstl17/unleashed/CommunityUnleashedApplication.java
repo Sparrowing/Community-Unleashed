@@ -1,12 +1,12 @@
-package bwphackstl17.smartneighborhood;
+package bwphackstl17.unleashed;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SmartneighborhoodApplication {
+public class CommunityUnleashedApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SmartneighborhoodApplication.class, args);
+		SpringApplication.run(CommunityUnleashedApplication.class, args);
 	}
 }

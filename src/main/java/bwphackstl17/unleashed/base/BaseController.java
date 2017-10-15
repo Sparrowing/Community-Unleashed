@@ -1,12 +1,12 @@
-package bwphackstl17.smartneighborhood.base;
+package bwphackstl17.unleashed.base;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import bwphackstl17.smartneighborhood.entities.User;
-import bwphackstl17.smartneighborhood.entities.access.EventRepository;
-import bwphackstl17.smartneighborhood.entities.access.UserRepository;
+import bwphackstl17.unleashed.entities.User;
+import bwphackstl17.unleashed.entities.access.EventRepository;
+import bwphackstl17.unleashed.entities.access.UserRepository;
 
 public class BaseController {
 	

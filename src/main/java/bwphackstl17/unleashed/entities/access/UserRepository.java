@@ -1,11 +1,11 @@
-package bwphackstl17.smartneighborhood.entities.access;
+package bwphackstl17.unleashed.entities.access;
 
 import javax.transaction.Transactional;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import bwphackstl17.smartneighborhood.entities.User;
+import bwphackstl17.unleashed.entities.User;
 
 @Transactional
 @Repository

@@ -1,4 +1,4 @@
-package bwphackstl17.smartneighborhood.controllers.rest;
+package bwphackstl17.unleashed.controllers.rest;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import bwphackstl17.smartneighborhood.base.BaseController;
-import bwphackstl17.smartneighborhood.entities.Event;
+import bwphackstl17.unleashed.base.BaseController;
+import bwphackstl17.unleashed.entities.Event;
 
 @RestController
 public class EventsController extends BaseController {

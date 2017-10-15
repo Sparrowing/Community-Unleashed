@@ -1,9 +1,9 @@
-package bwphackstl17.smartneighborhood.controllers.mvc;
+package bwphackstl17.unleashed.controllers.mvc;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import bwphackstl17.smartneighborhood.base.BaseController;
+import bwphackstl17.unleashed.base.BaseController;
 
 @Controller
 public class IndexController extends BaseController {

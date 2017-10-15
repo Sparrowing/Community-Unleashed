@@ -1,4 +1,4 @@
-package bwphackstl17.smartneighborhood.entities;
+package bwphackstl17.unleashed.entities;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import bwphackstl17.smartneighborhood.util.Helpers;
+import bwphackstl17.unleashed.util.Helpers;
 
 @Entity
 @Table(name = "users_test")

@@ -1,4 +1,4 @@
-package bwphackstl17.smartneighborhood.entities;
+package bwphackstl17.unleashed.entities;
 
 import java.util.Date;
 

@@ -1,4 +1,4 @@
-package bwphackstl17.smartneighborhood.controllers.mvc;
+package bwphackstl17.unleashed.controllers.mvc;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -7,9 +7,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import bwphackstl17.smartneighborhood.base.BaseController;
-import bwphackstl17.smartneighborhood.entities.User;
-import bwphackstl17.smartneighborhood.util.Helpers;
+import bwphackstl17.unleashed.base.BaseController;
+import bwphackstl17.unleashed.entities.User;
+import bwphackstl17.unleashed.util.Helpers;
 
 @Controller
 public class AuthController extends BaseController {
