@@ -1,0 +1,3 @@
+function addEvent(name, position) {
+	
+}
