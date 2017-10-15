@@ -1,3 +1,0 @@
-function addEvent(name, position) {
-	
-}

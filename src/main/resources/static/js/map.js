@@ -33,39 +33,34 @@ function mapInit() {
 	}
 	
 	// Load test/default markers
-	loadDefaultMarkers(map);
-	
-	addMarkerListeners(markers, map);
+	//loadDefaultMarkers(map);
+	console.log("loading events");
+	loadEvents();
 }
 
-/*
- * Generate some markers with hard-coded coordinates
- */
-function loadDefaultMarkers() {
-	
-	const archCoords = {
-			lat: 38.6247,
-			lng: -90.1848
-	}
-
-	const botanGardenCoords = {
-			lat: 38.6128,
-			lng: -90.2594
-	}
-	
-	var archMarker = new google.maps.Marker({
-		position: archCoords,
-		map: map
+function loadEvents() {
+	console.log("in the function");
+	$.ajax({
+		url: "http://localhost:8080/events"
+	}).then(function(data) {
+		
+		for (var i = 0; i < data.length; i++) {
+			
+			var pos = {
+					lat: data[i].lat,
+					lng: data[i].lng
+			}
+			
+			var marker = new google.maps.Marker({
+				position: pos,
+				map: map
+			});
+			
+			makeMarker(data[i], marker);
+			
+		}
+		
 	});
-	
-	var botanGardenMarker = new google.maps.Marker({
-		position: botanGardenCoords,
-		map: map
-	});
-	
-	markers.push(archMarker);
-	markers.push(botanGardenMarker);
-	
 }
 
 /*
@@ -74,7 +69,6 @@ function loadDefaultMarkers() {
 function setInfoWindow(marker, text) {
 	
 	// Kill existing info windows
-	console.log("is it killing them");
 	killInfoWindows();
 	
 	// Open new info window
@@ -89,7 +83,6 @@ function setInfoWindow(marker, text) {
  * Remove all active info windows
  */
 function killInfoWindows() {
-	console.log("killing info windows");
 	for (var i = 0; i < infoWindows.length; i++) {
 		infoWindows[i].close();
 	}
@@ -100,4 +93,9 @@ function killInfoWindows() {
  */
 function setMapCenter(pos) {
 	map.setCenter(pos);
+}
+
+function makeMarker(event, marker) {
+	addMarkerListener(event, marker, map);
+	markers.push([event, marker]);
 }

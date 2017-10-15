@@ -13,6 +13,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name="events_test")
 public class Event {
@@ -45,7 +47,7 @@ public class Event {
 	@Column(name="duration")
 	private int duration; // In minutes
 	
-	@ManyToOne
+	@ManyToOne @JsonIgnoreProperties("events")
 	@JoinColumn(name="user_id")
 	private User user;
 	
