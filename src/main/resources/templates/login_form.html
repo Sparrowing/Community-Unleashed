@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org/">
+
+	<head th:replace="frame::dochead"></head>
+	
+	<body>
+	
+		<div class="container-fluid unleashed-container-custom">
+		
+			<nav th:replace="frame::navbar"></nav>
+	
+			<form class="form-horizontal unleashed-form-custom" action="/login" method="POST">
+				
+				<div class="form-group text-left">
+					<label for="username">Username:</label>
+					<input class="form-control" type="text" name="username" placeholder="Unleashed Username"/>
+				</div>
+				
+				<div class="form-group text-left">
+					<label for="password">Password:</label>
+					<input class="form-control" type="password" name="password" placeholder="Unleashed Password" />
+				</div>
+				
+				<input type="submit" value="Log In!" />
+				
+			</form>
+			
+		</div>
+	
+	</body>
+
+</html>

@@ -10,6 +10,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import bwphackstl17.smartneighborhood.util.Helpers;
 
 @Entity
@@ -22,7 +24,7 @@ public class User {
 	@Column(name="user_id", unique=true)
 	private int id;
 	
-	@Column(name="username")
+	@Column(name="username", unique=true)
 	private String username;
 	
 	@Column(name="pw_hash")
@@ -30,6 +32,8 @@ public class User {
 	
 	@OneToMany(mappedBy="user")
 	private List<Event> events;
+	
+	private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 	
 	// CONSTRUCTORS -----------------------------------------------------------
 	
@@ -42,26 +46,35 @@ public class User {
 	
 	// PRIVATE METHODS --------------------------------------------------------
 	
-	/*
-	 * Hash a password
-	 * @param   unhashedPassword  Password (string) to be hashed
-	 * @return  Hashed version of password
-	 */
-	private static String hashPassword(String unhashedPassword) {
-		return Helpers.bcryptHash(unhashedPassword); // Return hashed password
+	private static String hashPassword(String password) {
+		return encoder.encode(password);
 	}
 	
 	// PUBLIC STATIC METHODS --------------------------------------------------
 	
+	public static boolean isValidUsername(String username) {
+		return Helpers.isRegexMatch("[a-zA-Z0-9_-]{3,15}", username);
+	}
+	
+	public static boolean isValidPassword(String password) {
+		return Helpers.isRegexMatch("([1-zA-Z0-1@.\\s]{2,10})", password);
+	}
+	
 	// PUBLIC INSTANCE METHODS ------------------------------------------------
+	
+	public boolean isPasswordMatch(String password) {
+		return encoder.matches(password, pwHash);
+	}
 	
 	// GETTERS AND SETTERS ----------------------------------------------------
 	
+	// Getters
 	public int getId()             { return this.id; }
 	public String getUsername()    { return this.username; }
 	public String getPwHash()      { return this.pwHash; }
 	public List<Event> getEvents() { return this.events; }
 	
+	// Setters
 	@SuppressWarnings("unused") private void setId(int id)                 { this.id = id; }
 	@SuppressWarnings("unused") private void setUsername(String username)  { this.username = username; }
 	@SuppressWarnings("unused") private void setPwHash(String pwHash)      { this.pwHash = pwHash; }

@@ -12,4 +12,5 @@ import bwphackstl17.smartneighborhood.entities.User;
 public interface UserRepository extends CrudRepository<User, Integer> {
 
 	User findById(int id);
+	User findByUsername(String username);
 }

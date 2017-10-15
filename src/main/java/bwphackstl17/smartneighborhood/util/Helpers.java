@@ -1,18 +1,24 @@
 package bwphackstl17.smartneighborhood.util;
 
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Helpers {
 	
-	private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+	/*
+	 * Returns whether or not String match matches the supplied regex pattern
+	 */
+	public static boolean isRegexMatch(String regex, String match) {
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(match);
+		return matcher.matches();
+	}
 	
 	/*
-	 * Hash using BCrypt
-	 * @param   stringToHash  String to be hashed
-	 * @return  String        Hashed version of stringToHash
+	 * Returns true if an input field has any content, else false
 	 */
-	public static String bcryptHash(String stringToHash) {
-		return encoder.encode(stringToHash);
+	public static boolean isBlankField(String field) {
+		return field == null || field == "";
 	}
 
 }
