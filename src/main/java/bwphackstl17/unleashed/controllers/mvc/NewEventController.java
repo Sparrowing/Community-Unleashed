@@ -1,11 +1,12 @@
 package bwphackstl17.unleashed.controllers.mvc;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -21,19 +22,21 @@ public class NewEventController extends BaseController {
 	}
 	
 	@RequestMapping(value="/new", method=RequestMethod.POST)
-	public String newEventPost(HttpServletRequest request, Model model) {
+	public String newEventPost(HttpServletRequest request) {
+		
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-mm-dd hh:mm");
 		
 		// Get values
 		String name = request.getParameter("name");
 		String description = request.getParameter("description");
 		double lat = Double.parseDouble(request.getParameter("latitude"));
 		double lng = Double.parseDouble(request.getParameter("longitude"));
-		@SuppressWarnings("deprecation")
-		Date startTime = new Date(Date.parse(request.getParameter("time")));
+		Date startTime = new Date();
+		try { startTime = formatter.parse(request.getParameter("time")); } catch (ParseException e) { e.printStackTrace(); }
 		int duration = Integer.parseInt(request.getParameter("duration"));
 		
 		// Make new event object
-		Event newEvent = new Event(name, description, lat, lng, startTime, duration);
+		Event newEvent = new Event(name, description, lat, lng, startTime, duration, user);
 		
 		// Save new event
 		eventRepo.save(newEvent);

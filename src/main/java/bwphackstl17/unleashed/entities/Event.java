@@ -54,13 +54,14 @@ public class Event {
 	// Empty constructor (for Hibernate)
 	public Event() { }
 	
-	public Event(String name, String description, double lat, double lng, Date startTime, int duration) {
+	public Event(String name, String description, double lat, double lng, Date startTime, int duration, User user) {
 		this.name = name;
 		this.description = description;
 		this.lat = lat;
 		this.lng = lng;
 		this.startTime = startTime;
 		this.duration = duration;
+		this.user = user;
 	}
 	
 	// PRIVATE METHODS --------------------------------------------------------

@@ -20,9 +20,9 @@ public class AuthController extends BaseController {
 	}
 	
 	@RequestMapping(value="/register", method=RequestMethod.POST)
-	public String registerPost(HttpServletRequest request, Model model) {
+	public String registerPost(HttpServletRequest request) {
 		
-		boolean error = true;
+		boolean error = false;
 		
 		// Retrieve form fields
 		String username = request.getParameter("username");
