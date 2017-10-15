@@ -1,3 +1,7 @@
+body {
+	background-color: #4D4D4D;
+}
+
 .unleashed-container-custom {
     padding: 0px;
     margin: 0px;
@@ -7,6 +11,7 @@
     margin: 0px;
     padding: 0px 15px;
     border-radius: 0px;
+    background-color: #4D4D4D;
 }
 
 .unleashed-form-custom {
@@ -16,21 +21,99 @@
 }
 
 .row-custom {
-    padding: 20px 0px;
+	min-height: 450px;
+    padding: 40px;
     margin: 0px;
 }
 
-#map {
-    height: 400px;
-    background-color: lightgreen;
+.map-legend-custom {
+	margin-top: 100px;
+	padding: 5px 25px;
+	width: 100%;
+	font-size: 18px;
+	line-height: 65px;
+	color: #FFD300;
 }
 
-#banner-row {
-    background-color: lightcoral;
+.navbar-nav li a {
+	line-height: 50px;
+}
+
+.banner-holder {
+	height: 350px;
+	color: white;
+	background-color: black;
+	border-radius: 10px;
+	opacity: 0.7;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+#connect-text {
+	margin-left: 0px;
+	margin-right: auto;
+	width: 70%;
+}
+
+#future-text {
+	margin-right: 0px;
+	margin-left: auto;
+	width: 70%;
+}
+
+#story-carousel img {
+	height: 450px;
+}
+
+#story-purina {
+	height: 450px;
+	background-image: url("../images/US_Purina.jpg");
+	background-position: center;
+	background-size: 100%;
+}
+
+#story-k9 {
+	height: 450px;
+	background-image: url("../images/US_K9.jpeg");
+	background-position: center;
+	background-size: 100%;
+}
+
+#story-lostpet {
+	height: 450px;
+	background-image: url("../images/US_LostPet.jpg");
+	background-position: center;
+	background-size: 100%;
+}
+
+#story-row {
+    background-position: center;
+    background-size: 100%;
+    height: 450px;
+    padding: 0px;
+}
+
+#map {
+	height: 450px;
 }
 
 #map-row {
-    padding-top: 0px;
-    padding-bottom: 0px;
-    background-color: lightblue;
+    padding: 0px;
+    background-color: #4D4D4D;
+}
+
+#connect-row {
+	background-image: url("../images/Connect.jpeg");
+	background-position: center;
+	background-size: 100%;
+}
+
+#future-row {
+	background-image: url("../images/Future.jpeg");
+	background-position: center;
+	background-size: 100%;
+}
+
+#banner-img {
+	height: 80px;
 }

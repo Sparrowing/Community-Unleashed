@@ -13,7 +13,31 @@ function mapInit() {
 	// Create map with default center for now
 	map = new google.maps.Map(document.getElementById("map"), {
 		zoom: 11,
-		center: defaultCenter
+		center: defaultCenter,
+		styles: [
+			
+			{
+				"featureType": "landscape",
+				"stylers": [
+					{ "color": "#4D4D4D" }
+				]
+			},
+			
+			{
+				"featureType": "poi",
+				"stylers": [
+					{ "visibility": "off" }
+				]
+			},
+			
+			{
+				"featureType": "road.highway",
+				"stylers": [
+					{ "visibility": "off" }
+				]
+			},
+			
+		]
 	});
 	
 	// Check if geolocation is available
@@ -32,14 +56,15 @@ function mapInit() {
 		});
 	}
 	
-	// Load test/default markers
-	//loadDefaultMarkers(map);
-	console.log("loading events");
+	map.addListener('click', function() {
+		killInfoWindows();
+	});
+	
+	// Load event markers
 	loadEvents();
 }
 
 function loadEvents() {
-	console.log("in the function");
 	$.ajax({
 		url: "http://localhost:8080/events"
 	}).then(function(data) {
@@ -51,8 +76,19 @@ function loadEvents() {
 					lng: data[i].lng
 			}
 			
+			var icon = "../images/Event_96x96.png";
+			
+			if (i == 0) {
+				icon = "../images/Activity_96x96.png";
+			}
+			
+			if (i == 1) {
+				icon = "../images/Alert_96x96.png";
+			}
+			
 			var marker = new google.maps.Marker({
 				position: pos,
+				icon: icon,
 				map: map
 			});
 			

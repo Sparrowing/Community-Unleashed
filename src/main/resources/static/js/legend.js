@@ -1,6 +1,8 @@
-function updateLegend(lat, lng) {
+function updateLegend(event) {
 	
-	$('#legend-lat-display').html(lat);
-	$('#legend-lng-display').html(lng);
+	$('#name-display').html(event.name);
+	var date = new Date(event.startTime);
+	$('#date-display').html((date.getMonth()+1) + "/" + date.getDate() + "/" + date.getFullYear());
+	$('#descrip-display').html(event.description);
 	
 }

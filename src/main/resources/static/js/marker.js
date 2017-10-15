@@ -13,7 +13,7 @@ function addMarkerListener(event, marker, map) {
 		setMapCenter(marker.getPosition());
 		
 		// Update legend with position
-		updateLegend(marker.getPosition().lat(), marker.getPosition().lng());
+		updateLegend(event);
 		
 	});
 	

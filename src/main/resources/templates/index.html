@@ -4,16 +4,49 @@
 
 	<head th:replace="frame::dochead"></head>
 	
-	<body>
+	<body data-spy="scroll" data-target="#unleashed-navbar-custom">
 	
 		<div class="container-fluid unleashed-container-custom">
 		
 			<nav th:replace="frame::navbar"></nav>
 	
-			<div class="row col-sm-12 row-custom" id="banner-row">
+			<div class="row col-sm-12 row-custom" id="story-row">
             
-				<h1>First Banner</h1>
-				<h3>Whatever we wanted in the first group</h3>
+				<div id="story-carousel" class="carousel slide" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#story-carousel" data-slide-to="0" class="active"></li>
+						<li data-target="#story-carousel" data-slide-to="1"></li>
+						<li data-target="#story-carousel" data-slide-to="2"></li>
+					</ol>
+					
+					<div class="carousel-inner">
+						<div class="item active" id="story-lostpet">
+							<div class="carousel-caption">
+					        		<h3>Lost and Found with Unleashed Alerts</h3>
+					        		<p>Jillian’s cat is missing. With the push of a button she sends Mr. Whisker’s photo and profile out to her neighborhood via a Community Unleashed Alert. Three blocks away and 30 minutes later, Allan spots Mr. Whiskers in the alley and notifies Jillian through the App.</p>
+					      	</div>
+						</div>
+						<div class="item" id="story-purina">
+							<div class="carousel-caption">
+					        		<h3>Purina Engages St. Louis Pet Lovers</h3>
+					        		<p>The Outreach Team from Purina uses Community Unleashed to reach local residents with charity events and corporate fundraisers. CU users RSVP for the event and can chat directly on the page with Purina team members.</p>
+					      	</div>
+						</div>
+						<div class="item" id="story-k9">
+							<div class="carousel-caption">
+					        		<h3>St. Louis Police K9 Unit uses Unleashed Events</h3>
+					        		<p>The police K9 training unit hosts events around St. Louis and used CU to engage neighborhood residents. Children and adults alike enjoy meeting the patrol dogs and learning about their service. </p>
+					      	</div>
+						</div>
+					</div>
+					
+					<a class="left carousel-control" href="#story-carousel" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left"></span>
+					</a>
+					<a class="right carousel-control" href="#story-carousel" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right"></span>
+					</a>
+				</div>
             
 			</div>
             
@@ -27,6 +60,28 @@
 					
 				</div>
             
+			</div>
+			
+			<div class="row col-sm-12 row-custom" id="connect-row">
+			
+				<div class="jumbotron-fluid" style="color: white">
+					<div class="container banner-holder" id="connect-text">
+						<h1 class="display-3">Connect</h1>
+						<p class="lead">Matching neighbors on deep profiles to build stronger community ties: "I love walking my dog every morning, meeting neighbors who do the same thing builds strong relationships in our community."</p>
+					</div>
+				</div>
+			
+			</div>
+			
+			<div class="row col-sm-12 row-custom" id="future-row">
+			
+				<div class="jumbotron-fluid" style="color: white; text-align: right">
+					<div class="container banner-holder" id="future-text">
+						<h1 class="display-3">The Future</h1>
+						<p class="lead">Scalability. This is an emerging model for a powerful community engagement toolkit. We see broad applications for pet owners to set an example for building sustainable, smart neighborhoods. Future applications extend beyond pets to community outreach, corporate partnerships and municipal relations.<br/>Concept inception stemmed from broader community building goals. Pet lovers are the foundation for a greater inter-connected St. Louis.</p>
+					</div>
+				</div>
+			
 			</div>
 			
 		</div>

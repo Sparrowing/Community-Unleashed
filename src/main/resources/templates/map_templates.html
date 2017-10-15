@@ -3,9 +3,45 @@
 <html xmlns:th="http://www.thymeleaf.org/">
 
 <div th:fragment="map-legend">
+	
+	<table class="map-legend-custom">
+		<tr>
+			<td colspan="3"><h1 class="display-3" id="name-display"></h1></td>
+		</tr>
+		
+		<tr>
+			<td colspan="3"><p class="lead" id="descrip-display"><span class="text-muted">Click a marker to get more information!</span></p></td>
+		</tr>
+		
+		<tr>
+			<td width="34%"><img th:src="@{/images/Tiny_Activities.png}" width="25px" /> Activities</td>
+			<td width="33%"><img th:src="@{/images/Tiny_Events.png}" width="25px" />Events</td>
+			<td width="33%"><img th:src="@{/images/Tiny_Alerts.png}" width="25px" />Alerts</td>
+		</tr>
+	</table>
 
-	<p><b>Latitude:</b> <span id="legend-lat-display"></span></p>
-	<p><b>Longitude:</b> <span id="legend-lng-display"></span></p>
+</div>
+
+<div th:fragment="map-key">
+
+	<table class="table map-key-custom">
+	
+		<tr>
+			<td><img src="https://www.what-dog.net/Images/faces2/scroll0015.jpg" width="50px" /></td>
+			<td>Events</td>
+		</tr>
+		
+		<tr>
+			<td><img src="https://www.what-dog.net/Images/faces2/scroll0015.jpg" width="50px" /></td>
+			<td>Activities</td>
+		</tr>
+		
+		<tr>
+			<td><img src="https://www.what-dog.net/Images/faces2/scroll0015.jpg" width="50px" /></td>
+			<td>Alerts</td>
+		</tr>
+	
+	</table>
 
 </div>
 

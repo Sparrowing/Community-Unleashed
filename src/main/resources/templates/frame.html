@@ -14,26 +14,28 @@
 	<script th:src="@{/js/legend.js}"></script>
 	<script th:src="@{/js/map.js}"></script>
 	<script th:src="@{/js/marker.js}"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCt_Goq2iMbIxWsjPVCDw9ExKDbdCi82Gw&amp;callback=mapInit"></script>
 
 </head>
 
 <!-- NAVBAR FRAGMENT -->
-<nav th:fragment="navbar" class="navbar navbar-default unleashed-nav-custom">
+<nav th:fragment="navbar" class="navbar navbar-default navbar-inverse unleashed-nav-custom">
 	<div class="container-fluid">
 	
 		<div class="navbar-header">
-			<a class="navbar-brand" href="#">Community Unleashed</a>
+			<a href="/"><img src="../images/Logo.png" id="banner-img" alt="Community Unleashed: Smart Neighborhood" /></a>
 		</div>
 		
 		<ul class="nav navbar-nav">
-			<li><a href="#">Section 1</a></li>
-			<li><a href="#">Section 2</a></li>
-			<li><a href="#">Section 3</a></li>
+			<li><a href="/#story-row">Stories</a></li>
+			<li><a href="/#map-row">Maps</a></li>
+			<li><a href="/#connect-row">Connect</a></li>
+			<li><a href="/#future-row">Future</a></li>
 		</ul>
 		
 		<ul class="nav navbar-nav navbar-right">
-			<li><a href="/login">Log In</a></li>
+			<li><a href="/login"><img th:src="@{/images/Login_Default.png}" height="50px" /></a></li>
 		</ul>
 		
 	</div> 

@@ -51,6 +51,9 @@ public class Event {
 	@JoinColumn(name="user_id")
 	private User user;
 	
+	@Column(name="color")
+	private String color;
+	
 	// CONSTRUCTORS -----------------------------------------------------------
 	
 	// Empty constructor (for Hibernate)
@@ -83,6 +86,7 @@ public class Event {
 	public Date getStartTime()     { return this.startTime; }
 	public int getDuration()       { return this.duration; }
 	public User getUser()          { return this.user; }
+	public String getColor()       { return this.color; }
 	
 	// Setters (for Hibernate)
 	@SuppressWarnings("unused") private void setId(int id)                { this.id = id; }
@@ -94,5 +98,6 @@ public class Event {
 	@SuppressWarnings("unused") private void setStartTime(Date startTime) { this.startTime = startTime; }
 	@SuppressWarnings("unused") private void setDuration(int duration)    { this.duration = duration; }
 	@SuppressWarnings("unused") private void setUser(User user)           { this.user = user; }
+	@SuppressWarnings("unused") private void setColor(String color)       { this.color = color; }
 
 }
