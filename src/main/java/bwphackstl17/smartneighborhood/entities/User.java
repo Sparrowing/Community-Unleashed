@@ -1,9 +1,12 @@
 package bwphackstl17.smartneighborhood.entities;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -24,6 +27,9 @@ public class User {
 	
 	@Column(name="pw_hash")
 	private String pwHash;
+	
+	@OneToMany(mappedBy="user")
+	private List<Event> events;
 	
 	// CONSTRUCTORS -----------------------------------------------------------
 	
@@ -51,13 +57,15 @@ public class User {
 	
 	// GETTERS AND SETTERS ----------------------------------------------------
 	
-	public int getId()          { return this.id; }
-	public String getUsername() { return this.username; }
-	public String getPwHash()   { return this.pwHash; }
+	public int getId()             { return this.id; }
+	public String getUsername()    { return this.username; }
+	public String getPwHash()      { return this.pwHash; }
+	public List<Event> getEvents() { return this.events; }
 	
-	@SuppressWarnings("unused") private void setId(int id)                { this.id = id; }
-	@SuppressWarnings("unused") private void setUsername(String username) { this.username = username; }
-	@SuppressWarnings("unused") private void setPwHash(String pwHash)     { this.pwHash = pwHash; }
+	@SuppressWarnings("unused") private void setId(int id)                 { this.id = id; }
+	@SuppressWarnings("unused") private void setUsername(String username)  { this.username = username; }
+	@SuppressWarnings("unused") private void setPwHash(String pwHash)      { this.pwHash = pwHash; }
+	@SuppressWarnings("unused") private void setEvents(List<Event> events) { this.events = events; }
 	
 
 }
