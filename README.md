@@ -22,7 +22,7 @@ Also, go ahead and check out the sister iOS application coded by [Amanda Rawls](
 
 ## Uses
 
-* [Bootstrap CSS](https://getbootstrap.com/docs/3.3/css/) for basic page styling.
+* [Bootstrap CSS and JS](http://getbootstrap.com/) for page styling and UI.
 * [Google Maps JavaScript API](https://developers.google.com/maps/) for generation of the event map.
 * [Hibernate](http://hibernate.org/) as an ORM tool for database-related tasks.
 * [Maven](https://maven.apache.org/) for dependency management.
